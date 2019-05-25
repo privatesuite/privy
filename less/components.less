@@ -1,0 +1,33 @@
+@button-padding: @small-padding/2 @medium-padding/2;
+
+button {
+
+	border: none;
+	border-radius: @small-radius;
+
+	padding: @button-padding;
+
+	color: @white;
+	font-size: 13.3px;
+	font-weight: 700;
+
+	background-color: @black;
+
+	&.medium {
+
+		font-size: 15px;
+
+	}
+
+	&:hover {
+
+		box-shadow: @shadow;
+		background-color: @light-black;
+
+	}
+
+	cursor: pointer;
+	box-shadow: @light-shadow;
+	transition: 0.2s all;
+
+}
