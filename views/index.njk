@@ -1,0 +1,100 @@
+<div class="app__preview">
+	
+	<div class="app__preview__pop">
+		
+		<div class="app__preview__information">
+			
+			<img src="https://scontent-atl3-1.cdninstagram.com/vp/6c302232423f8982428e8d112816b764/5D57901D/t51.2885-15/e35/57343652_165660687787446_4109264913444418100_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com">
+			
+			<div class="content">
+				
+				<span class="post__type">{{ getPostType(featured) }}</span>
+				<span class="post__title">{{ featured.title.rendered }}</span>
+				
+			</div>
+			
+		</div>
+		
+		<div class="app__preview__description">
+			
+			<span>{{ featured.excerpt.rendered or "No preview available" }}</span>
+			
+			<br>
+			
+			<button class="medium">Explore <u>{{ featured.title.rendered }}</u></button>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<div class="app__main">
+	
+	<div class="app__main__pop post--board">
+
+		{% for post in posts %}
+
+			<div class="post" {% if post.acf.image %} style="background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('{{ post.acf.image.url }}'); background-size: cover;" {% endif %}>
+			
+				<span class="post__type">{{ getPostType(post) }}</span>
+				<span class="post__title">{{ post.title.rendered }}</span>
+
+			</div>
+
+		{% endfor %}
+
+		<!-- <div class="post">
+			
+			<span class="post__type">snippet</span>
+			<span class="post__title">Maitro's Vaporwave Journey</span>
+			
+		</div>
+		
+		<div class="post">
+			
+			<span class="post__type">fiction</span>
+			<span class="post__title">Windows XP Adventures</span>
+			
+		</div>
+		
+		<div class="post">
+			
+			<span class="post__type">non-fiction</span>
+			<span class="post__title">Vaporwave's Consumerism</span>
+			
+		</div>
+		
+		<div class="post">
+			
+			<span class="post__type">team</span>
+			<span class="post__title">Check out our new Website!</span>
+			
+		</div>
+		
+		<div class="post">
+			
+			<span class="post__type">ducks</span>
+			<span class="post__title">Aren't Ducks Cheeky Boys?</span>
+			
+		</div> -->
+		
+	</div>
+	
+</div>
+
+<div class="app__footer">
+	
+	<div class="app__footer__pop">
+		
+		<span class="app__footer__copyright">
+			
+			Made With &hearts; | &copy; Private Suite Magazine
+			
+		</span>
+		
+	</div>
+	
+</div>
+
+<script src="js/app.js"></script>
