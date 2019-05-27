@@ -38,9 +38,15 @@ function url () {
 
 }
 
+function path (obj) {
+
+	return new URL(obj.link).pathname;
+
+}
+
 function getPostType (obj) {
 
-	return new URL(obj.link).pathname.split("/")[1];
+	return path(obj).split("/")[1];
 
 }
 

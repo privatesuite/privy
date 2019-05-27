@@ -201,6 +201,22 @@ html, body {
 		font-size: @medium-text;
 		font-weight: 500;
 
+		span {
+
+			* {
+
+				margin: 0;
+
+			}
+
+		}
+
+		button {
+
+			margin-top: 25px;
+
+		}
+
 	}
 
 	@media only screen and (max-width: @medium-media) {
@@ -241,13 +257,15 @@ html, body {
 		padding: @medium-padding;
 
 		width: 100%;
-		min-height: 600px;
+		height: 600px;
 		
 		color: @white;
 
 		background-color: @pink;
 
 		box-shadow: @shadow;
+
+		overflow-y: auto;
 
 	}
 
