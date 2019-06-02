@@ -5,10 +5,12 @@ nunjucks.configure({
 });
 
 const proxy = "https://cors-anywhere.herokuapp.com/"
+var initialLoad = true;
 
 const URLMap = {
 
-	"/": "index"
+	"/": "index",
+	"/issues": "issue"
 
 }
 
@@ -30,6 +32,8 @@ var posts = [];
 var pages = [];
 var featured = {};
 
+var footer = "";
+
 function url () {
 
 	if (location.hash.replace("#", "").trim().length === 0) location.hash = "/";
@@ -50,11 +54,13 @@ function getPostType (obj) {
 
 }
 
-async function render (file, ctx) {
+async function render (file, ctx = {}) {
+
+	if (!footer && file !== "footer") footer = await render("footer");
 
 	return nunjucks.renderString(await (await fetch(`views/${file}.njk`)).text(), {
 
-		include: render, getPostType, ...ctx
+		include: render, getPostType, path, ...ctx, footer, url
 
 	});
 
@@ -73,9 +79,31 @@ async function loadData () {
 
 }
 
+async function scriptify (el) {
+
+	for (const child of el.children) {
+
+		if (child.tagName.toLowerCase() === "script") {
+
+			var clone = child.cloneNode();
+			child.remove();
+			
+			var script = await (await fetch(clone.src)).text();
+			eval(script);
+
+		} else {
+
+			if (child.children.length !== 0) scriptify(child);
+
+		}
+
+	}
+
+}
+
 async function load () {
 
-	const u = URLMap[url()];
+	const u = URLMap["/" + url().split("/")[1]];
 
 	console.log(`Loading ${url()}`);
 
@@ -94,15 +122,40 @@ async function load () {
 
 		posts,
 		pages,
-		featured
+		featured,
+
+		issue: u === "issue" ? pages.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined
 
 	});
 
+	if (initialLoad) {
+
+		// setTimeout(() => {
+
+			document.querySelector(".loading").classList.add("loaded");
+
+			setTimeout(() => {
+
+				document.querySelector(".styling").remove();
+				document.querySelector(".loading").remove();
+
+			}, 750);
+
+		// }, 1000);
+
+		initialLoad = !initialLoad;
+
+	}
+
 	document.querySelector(".app").innerHTML = data;
+
+	scriptify(document.querySelector(".app"));
 
 }
 
 load();
+
+window.addEventListener("hashchange", load);
 
 document.addEventListener("scroll", event => {
 	
