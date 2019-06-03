@@ -35,12 +35,12 @@
 
 		{% for post in posts %}
 
-			<div class="post" {% if post.acf.image %} style="background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('{{ post.acf.image.url }}'); background-size: cover;" {% endif %}>
+			<a href="/#/read/{{ path(post).split('/')[2] }}" class="post" {% if post.acf.image %} style="background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('{{ post.acf.image.url }}'); background-size: cover;" {% endif %}>
 			
 				<span class="post__type">{{ getPostType(post) }}</span>
 				<span class="post__title">{{ post.title.rendered }}</span>
 
-			</div>
+			</a>
 
 		{% endfor %}
 

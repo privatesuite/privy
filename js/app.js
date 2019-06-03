@@ -10,7 +10,8 @@ var initialLoad = true;
 const URLMap = {
 
 	"/": "index",
-	"/issues": "issue"
+	"/issues": "issue",
+	"/read": "read"
 
 }
 
@@ -124,7 +125,8 @@ async function load () {
 		pages,
 		featured,
 
-		issue: u === "issue" ? pages.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined
+		issue: u === "issue" ? pages.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined,
+		post: u === "read" ? posts.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined
 
 	});
 
