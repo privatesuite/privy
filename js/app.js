@@ -70,7 +70,36 @@ async function render (file, ctx = {}) {
 async function loadData () {
 
 	if (posts.length === 0) posts = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/posts`)).json();
-	if (pages.length === 0) pages = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/pages`)).json();
+	if (pages.length === 0) {
+		
+		pages = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/pages`)).json();
+
+		var issues = [];
+
+		for (const page of pages) {
+
+			if (getPostType(page) === "issues" && path(page) !== "/issues/") {
+
+				var issue = document.createElement("a");
+
+				issue.href = `#${path(page)}`;
+				issue.innerText = page.title.rendered;
+
+				issues.push({page, issue});
+
+			}
+
+		}
+
+		issues = issues.sort((a, b) => parseInt(path(a.page).split("-")[1]) - parseInt(path(b.page).split("-")[1]));
+
+		for (const is of issues) {
+				
+			document.querySelector(".app__menu__issues").appendChild(is.issue);
+
+		}
+
+	}
 
 	for (const page of pages) {
 		
@@ -104,6 +133,7 @@ async function scriptify (el) {
 
 async function load () {
 
+	document.querySelector(".app__menu").style.display = "none";
 	const u = URLMap["/" + url().split("/")[1]];
 
 	console.log(`Loading ${url()}`);
@@ -165,5 +195,12 @@ document.addEventListener("scroll", event => {
 
 	if (y > 10) document.querySelector(".app__menu__brand").classList.add("minimized");
 	else document.querySelector(".app__menu__brand").classList.remove("minimized");
+
+});
+
+document.querySelector(".app__menu__opener").addEventListener("click", () => {
+
+	if (document.querySelector(".app__menu").style.display === "block") document.querySelector(".app__menu").style.display = "none";
+	else document.querySelector(".app__menu").style.display = "block";
 
 });
