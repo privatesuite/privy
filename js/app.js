@@ -101,9 +101,9 @@ async function loadData () {
 
 	}
 
-	for (const page of pages) {
+	for (const article of [...pages, ...posts]) {
 		
-		if (page.acf.featured) featured = page;
+		if (article.acf.featured) featured = article;
 
 	}
 
