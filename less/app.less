@@ -15,6 +15,7 @@
 @small-padding: 20px;
 @medium-padding: 25px;
 
+@smaller-text: 16px;
 @medium-text: 20px;
 @large-text: 35px;
 
@@ -48,6 +49,12 @@ html, body {
 
 	width: 100%;
 	height: 100%;
+
+	&.menu__shown {
+
+		overflow: hidden;
+
+	}
 
 }
 
@@ -122,6 +129,8 @@ html, body {
 		z-index: 100;
 		transition: 0.2s all;
 
+		z-index: 102;
+
 	}
 
 	z-index: 100;
@@ -135,9 +144,18 @@ html, body {
 	top: 0;
 	left: 0;
 
-
 	width: 100%;
 	height: 100%;
+
+	opacity: 0;
+	pointer-events: none;
+
+	&.shown {
+
+		opacity: 1;
+		pointer-events: all;
+
+	}
 
 	.app__menu__pop {
 
@@ -149,8 +167,6 @@ html, body {
 		color: white;
 
 		background-color: @blue;
-
-		box-shadow: @shadow;
 
 		.app__menu__brand {
 
@@ -167,18 +183,27 @@ html, body {
 
 			&>* {
 
+				display: inline-block;
+
 				margin-bottom: 10px;
 
-				* {
+				border-radius: @small-radius;
 
-					display: block;
+				padding: @medium-padding;
 
-				}
+				min-width: 300px;
+				min-height: 200px;
+
+				background-color: @pink;
 
 				a {
 
-					padding-top: 5px;
-					padding-left: 20px;
+					display: block;
+
+					// padding-top: 5px;
+					// padding-left: 20px;
+
+					padding: 5px 12px;
 
 					color: @white;
 
@@ -186,17 +211,28 @@ html, body {
 
 				.app__menu__section__title {
 
+					display: inline-block;
+
+					margin-bottom: 7px;
+
 					font-size: @medium-text;
 
 				}
+
+				box-shadow: @light-shadow;
+				vertical-align: top;
 
 			}
 
 		}
 
+		overflow: auto;
+		box-shadow: @shadow;
+
 	}
 
-	z-index: 1000;
+	z-index: 101;
+	transition: 0.1s all ease-in-out;
 
 }
 
@@ -271,7 +307,7 @@ html, body {
 		margin-left: 68%;
 
 		color: white;
-		font-size: @medium-text;
+		font-size: @smaller-text;
 		font-weight: 500;
 
 		span {

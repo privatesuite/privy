@@ -4,7 +4,7 @@
 		
 		<a href="#{{ path(featured) }}" class="app__preview__information">
 			
-			<img src="https://scontent-atl3-1.cdninstagram.com/vp/6c302232423f8982428e8d112816b764/5D57901D/t51.2885-15/e35/57343652_165660687787446_4109264913444418100_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com">
+			<img {% if featured.acf.image %} src="{{ featured.acf.image.url }}" {% endif %}>
 			
 			<div class="content">
 				
