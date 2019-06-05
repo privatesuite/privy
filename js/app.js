@@ -5,7 +5,7 @@ nunjucks.configure({
 });
 
 // const proxy = "https://cors-anywhere.herokuapp.com/"
-const proxy = "";
+const proxy = localStorage.getItem("proxy") || "";
 var initialLoad = true;
 
 const URLMap = {
