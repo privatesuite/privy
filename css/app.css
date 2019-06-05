@@ -307,6 +307,10 @@ body {
 .app__read {
   background-color: #0149e6 !important;
 }
+/* line 5, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+.app__read a {
+  color: white;
+}
 /* line 3, C:\Users\augus\Desktop\Programming\privy\privy\less\issue.less */
 .app__issue .issue__title {
   font-size: 40px;
