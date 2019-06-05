@@ -4,7 +4,8 @@ nunjucks.configure({
 
 });
 
-const proxy = "https://cors-anywhere.herokuapp.com/"
+// const proxy = "https://cors-anywhere.herokuapp.com/"
+const proxy = "";
 var initialLoad = true;
 
 const URLMap = {
@@ -13,7 +14,8 @@ const URLMap = {
 	"/issues": "issue",
 	"/read": "read",
 
-	"/about": "about"
+	"/about": "about",
+	"/regulars": "regulars"
 
 }
 
@@ -129,7 +131,8 @@ async function load () {
 
 		issue: u === "issue" ? pages.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined,
 		post: u === "read" ? posts.find(p => p.link.endsWith(url().split("/").slice(1)[1] + "/")) : undefined,
-		about: u === "about" ? pages.find(p => p.link.endsWith("about/")) : undefined
+		about: u === "about" ? pages.find(p => p.link.endsWith("about/")) : undefined,
+		regulars: u === "regulars" ? pages.find(p => p.link.endsWith("regulars/")) : undefined
 
 	});
 
@@ -144,6 +147,7 @@ async function load () {
 				var issue = document.createElement("a");
 
 				issue.href = `#${path(page)}`;
+				issue.role = "menuitem";
 				issue.innerText = page.title.rendered;
 
 				issues.push({page, issue});
