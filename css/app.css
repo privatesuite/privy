@@ -1,10 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:300,500,900";
-/* line 35, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 47, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 * {
   outline: none !important;
   box-sizing: border-box;
 }
-/* line 42, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 54, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 html,
 body {
   margin: 0;
@@ -13,7 +13,7 @@ body {
   height: 100%;
   font-family: "Roboto";
 }
-/* line 54, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 66, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .background {
   position: fixed;
   top: 0;
@@ -22,20 +22,20 @@ body {
   height: 100%;
   z-index: -100;
 }
-/* line 70, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 82, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app {
   width: 100%;
   height: 100%;
 }
-/* line 75, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 87, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app.menu__shown {
   overflow: hidden;
 }
-/* line 83, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 95, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener {
   z-index: 100;
 }
-/* line 93, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 105, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener .app__menu__brand {
   position: absolute;
   top: 10px;
@@ -53,7 +53,7 @@ body {
   overflow: hidden;
   transition: width 0.1s, padding 0.15s;
 }
-/* line 128, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 140, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener > img {
   position: fixed;
   top: 10px;
@@ -68,11 +68,11 @@ body {
   transition: 0.2s all;
   z-index: 102;
 }
-/* line 144, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 156, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener > img:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
-/* line 162, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 174, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu {
   position: fixed;
   top: 0;
@@ -84,12 +84,12 @@ body {
   z-index: 101;
   transition: 0.1s all ease-in-out;
 }
-/* line 175, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 187, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu.shown {
   opacity: 1;
   pointer-events: all;
 }
-/* line 182, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 194, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop {
   padding: 25px;
   width: 100%;
@@ -99,14 +99,14 @@ body {
   overflow: auto;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 193, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 205, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__brand {
   display: block;
   margin-bottom: 20px;
   font-size: 35px;
   font-weight: 900;
 }
-/* line 206, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 218, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * {
   display: inline-block;
   margin-bottom: 10px;
@@ -118,23 +118,23 @@ body {
   box-shadow: 2px 2px 5px #2c2c2c;
   vertical-align: top;
 }
-/* line 221, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 233, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * a {
   display: block;
   padding: 5px 12px;
   color: white;
 }
-/* line 234, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 246, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * .app__menu__section__title {
   display: inline-block;
   margin-bottom: 7px;
   font-size: 20px;
 }
-/* line 261, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 273, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview {
   padding: 25px;
 }
-/* line 266, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 278, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__pop {
   position: relative;
   border-radius: 3px;
@@ -142,7 +142,7 @@ body {
   background-color: #0149e6;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 281, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 293, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information {
   position: absolute;
   margin: 25px;
@@ -155,7 +155,7 @@ body {
   overflow: hidden;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 298, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 310, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information > img {
   position: absolute;
   top: 0;
@@ -163,12 +163,12 @@ body {
   opacity: 0.4;
   z-index: 1;
 }
-/* line 311, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 323, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information > .content {
   position: absolute;
   z-index: 2;
 }
-/* line 324, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 336, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description {
   position: absolute;
   margin: 28px;
@@ -177,36 +177,36 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
-/* line 337, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 349, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description span * {
   margin: 0;
   font-weight: 500;
 }
-/* line 346, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 358, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description .btn {
   display: inline-block;
   margin-top: 25px;
   text-decoration: none;
 }
 @media only screen and (max-width: 725px) {
-  /* line 360, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 372, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__preview .app__preview__information {
     margin: 0;
     width: 100%;
     box-shadow: none;
   }
-  /* line 372, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 384, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__preview .app__preview__description {
     display: none;
   }
 }
-/* line 382, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 394, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__main {
   margin-top: 25px;
   padding: 25px;
   padding-top: 0px;
 }
-/* line 389, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 401, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__main .app__main__pop {
   border-radius: 3px;
   padding: 25px;
@@ -217,12 +217,12 @@ body {
   box-shadow: 2px 2px 10px #2c2c2c;
   overflow-y: auto;
 }
-/* line 410, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 422, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__footer {
   padding: 25px;
   padding-top: 0px;
 }
-/* line 415, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 427, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__footer .app__footer__pop {
   border-radius: 3px;
   padding: 25px;
@@ -233,7 +233,7 @@ body {
   box-shadow: 2px 2px 10px #2c2c2c;
 }
 @media only screen and (max-width: 725px) {
-  /* line 430, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 442, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__footer .app__footer__pop {
     height: 85px;
   }
@@ -307,6 +307,7 @@ body {
   text-align: center;
   line-height: 50px;
   background-color: #e60149;
+  box-shadow: 2px 2px 5px #e60149;
 }
 @media only screen and (max-width: 725px) {
   /* line 94, C:\Users\augus\Desktop\Programming\privy\privy\less\post.less */
@@ -317,14 +318,14 @@ body {
     line-height: 33.33333333px;
   }
 }
-/* line 114, C:\Users\augus\Desktop\Programming\privy\privy\less\post.less */
+/* line 116, C:\Users\augus\Desktop\Programming\privy\privy\less\post.less */
 .post__type {
   display: block;
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
 }
-/* line 124, C:\Users\augus\Desktop\Programming\privy\privy\less\post.less */
+/* line 126, C:\Users\augus\Desktop\Programming\privy\privy\less\post.less */
 .post__title {
   display: block;
   font-size: 27px;
@@ -332,9 +333,23 @@ body {
 }
 /* line 1, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read {
+  padding-top: 40px !important;
   background-color: #0149e6 !important;
 }
-/* line 5, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+/* line 7, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+.app__read .read__type {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+/* line 17, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+.app__read .read__title {
+  display: block;
+  font-size: 27px;
+  font-weight: 300;
+}
+/* line 26, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read a {
   color: white;
 }

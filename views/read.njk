@@ -2,7 +2,8 @@
 	
 	<div class="app__main__pop app__read">
 
-		<h1 class="issue__title">{{ post.title.rendered }}</h1>
+		<span class="read__type">{{ getPostType(post) }}{% if post.acf.web_only %} | WEB ONLY {% endif %}</span>
+		<span class="read__title">{{ post.title.rendered }}</span>
 
 		{{ post.content.rendered }}
 
