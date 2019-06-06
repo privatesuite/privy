@@ -14,12 +14,14 @@
 
 .post {
 
+	position: relative;
+
+	display: inline-block;
+
 	margin-right: 10px;
 	margin-bottom: 10px;
 
 	padding: @small-padding;
-
-	display: inline-block;
 	
 	border-radius: @small-radius;
 	
@@ -63,7 +65,48 @@
 
 	}
 
+	&.web_only {
+
+		&:after {
+
+			content: "Web Only";
+
+			position: absolute;
+
+			right: 0;
+			bottom: 0;
+
+			display: block;
+
+			margin: 10px;
+
+			border-radius: @small-radius;
+
+			width: 125px;
+			height: 50px;
+
+			font-size: 17px;
+			text-align: center;
+			line-height: 50px;
+
+			background-color: @pink;
+
+			@media only screen and (max-width: @medium-media) {
+
+				width: 125px / 1.5;
+				height: 50px / 1.5;
+
+				font-size: 12px;
+				line-height: 50px / 1.5;
+
+			}
+
+		}
+
+	}
+
 	cursor: pointer;
+	overflow: hidden;
 	transition: 0.2s all;
 
 }

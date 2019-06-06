@@ -35,7 +35,7 @@
 
 		{% for post in posts %}
 
-			<a href="#/read/{{ path(post).split('/')[2] }}" class="post" {% if post.acf.image %} alt="{{ post.acf.image.alt }}" style="background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('{{ post.acf.image.url }}'); background-size: cover;" {% endif %} role="button">
+			<a href="#/read/{{ path(post).split('/')[2] }}" class="post {% if post.acf.web_only %} web_only {% endif %}" {% if post.acf.image %} alt="{{ post.acf.image.alt }}" style="background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url('{{ post.acf.image.url }}'); background-size: cover;" {% endif %} role="button">
 			
 				<span class="post__type">{{ getPostType(post) }}</span>
 				<span class="post__title">{{ post.title.rendered }}</span>
