@@ -17,6 +17,8 @@ copy /Y "../img" "../staging/dist/img" > nul
 copy /Y "../views" "../staging/dist/views" > nul
 
 more "../index.html" > "../staging/dist/index.html"
+more "../manifest.json" > "../staging/dist/manifest.json"
+more "../sw.js" > "../staging/dist/sw.js"
 
 echo Distribution folder is ready
 

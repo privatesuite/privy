@@ -2,14 +2,16 @@
 
 	"short_name": "private suite",
 	"name": "private suite magazine",
-	"icons": {
+	"icons": [{
 
 		"src": "/img/favicon.png",
-		"type": "image/png"
+		"type": "image/png",
+		"sizes": "1000x1000"
 
-	},
+	}],
 	"start_url": "/#",
 	"display": "standalone",
-	"background_color": "white"
+	"background_color": "white",
+	"purpose": "any"
 
 }
