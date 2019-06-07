@@ -73,8 +73,20 @@ async function render (file, ctx = {}) {
 
 async function loadData () {
 
-	if (posts.length === 0) posts = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/posts`)).json();
-	if (pages.length === 0) pages = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/pages`)).json();
+	if (navigator.onLine) {
+
+		if (posts.length === 0) posts = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/posts`)).json();
+		if (pages.length === 0) pages = await (await fetch(`${proxy}https://privatesuitemag.com/wp-json/wp/v2/pages`)).json();
+
+		localStorage.setItem("posts", JSON.stringify(posts));
+		localStorage.setItem("pages", JSON.stringify(pages));
+
+	} else {
+
+		posts = JSON.parse(localStorage.getItem("posts"));
+		pages = JSON.parse(localStorage.getItem("pages"));
+
+	}
 
 	for (const article of [...pages, ...posts]) {
 		
@@ -189,7 +201,26 @@ async function load () {
 
 }
 
+function registerServiceWorker () {
+
+	if ("serviceWorker" in navigator) {
+
+		navigator.serviceWorker.register(location.pathname + "sw.js").then(registration => {
+
+			console.log(`Service worker registration successful with scope "${registration.scope}"`);
+		
+		}, err => {
+			
+			console.error(`Service worker registration failed with error ${err}`);
+		
+		});
+
+	}
+
+}
+
 load();
+registerServiceWorker();
 
 window.addEventListener("hashchange", load);
 
