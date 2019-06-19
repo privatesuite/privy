@@ -1,14 +1,14 @@
 @import "https://fonts.googleapis.com/css?family=Roboto:300,500,900";
-/* line 47, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 51, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 * {
   outline: none !important;
   box-sizing: border-box;
 }
-/* line 52, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 56, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 *::-webkit-scrollbar {
   width: 0px;
 }
-/* line 60, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 64, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 html,
 body {
   margin: 0;
@@ -17,29 +17,21 @@ body {
   height: 100%;
   font-family: "Roboto";
 }
-/* line 72, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-/* line 88, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 92, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app {
+  margin-top: 125px;
   width: 100%;
   height: 100%;
 }
-/* line 93, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 99, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app.menu__shown {
   overflow: hidden;
 }
-/* line 101, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 113, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener {
   z-index: 100;
 }
-/* line 111, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 123, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener .app__menu__brand {
   position: absolute;
   top: 10px;
@@ -57,7 +49,7 @@ body {
   overflow: hidden;
   transition: width 0.1s, padding 0.15s;
 }
-/* line 146, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 158, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener > img {
   position: fixed;
   top: 10px;
@@ -72,45 +64,58 @@ body {
   transition: 0.2s all;
   z-index: 102;
 }
-/* line 162, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 174, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu__opener > img:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
-/* line 180, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 192, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu {
   position: fixed;
   top: 0;
   left: 0;
+  display: inline-block;
+  padding: 25px;
   width: 100%;
-  height: 100%;
   opacity: 0;
-  pointer-events: none;
   z-index: 101;
   transition: 0.1s all ease-in-out;
 }
-/* line 193, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 209, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu.shown {
   opacity: 1;
-  pointer-events: all;
 }
-/* line 200, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 216, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop {
-  padding: 25px;
+  display: inline-block;
+  border-radius: 3px;
   width: 100%;
-  height: 100%;
+  height: 80px;
   color: white;
   background-color: #0149e6;
-  overflow: auto;
+  overflow: none;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 211, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 231, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__brand {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 35px;
-  font-weight: 900;
+  display: inline-block;
+  padding: 10px;
+  height: 100%;
 }
-/* line 224, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 243, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+.app__menu .app__menu__pop .app__menu__items {
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 80px;
+  vertical-align: top;
+}
+/* line 249, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+.app__menu .app__menu__pop .app__menu__items > a {
+  margin-right: 20px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+/* line 266, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * {
   display: inline-block;
   margin-bottom: 10px;
@@ -122,23 +127,24 @@ body {
   box-shadow: 2px 2px 5px #2c2c2c;
   vertical-align: top;
 }
-/* line 239, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 281, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * a {
   display: block;
   padding: 5px 12px;
   color: white;
 }
-/* line 252, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 294, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__menu .app__menu__pop .app__menu__sections > * .app__menu__section__title {
   display: inline-block;
   margin-bottom: 7px;
   font-size: 20px;
 }
-/* line 279, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 327, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview {
   padding: 25px;
+  padding-top: 0px;
 }
-/* line 284, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 333, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__pop {
   position: relative;
   border-radius: 3px;
@@ -146,7 +152,7 @@ body {
   background-color: #0149e6;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 299, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 348, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information {
   position: absolute;
   margin: 25px;
@@ -159,7 +165,7 @@ body {
   overflow: hidden;
   box-shadow: 2px 2px 10px #2c2c2c;
 }
-/* line 316, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 365, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information > img {
   position: absolute;
   top: 0;
@@ -167,12 +173,12 @@ body {
   opacity: 0.4;
   z-index: 1;
 }
-/* line 329, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 378, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__information > .content {
   position: absolute;
   z-index: 2;
 }
-/* line 342, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 391, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description {
   position: absolute;
   margin: 28px;
@@ -181,36 +187,36 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
-/* line 355, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 404, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description span * {
   margin: 0;
   font-weight: 500;
 }
-/* line 364, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 413, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__preview .app__preview__description .btn {
   display: inline-block;
   margin-top: 25px;
   text-decoration: none;
 }
 @media only screen and (max-width: 725px) {
-  /* line 378, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 427, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__preview .app__preview__information {
     margin: 0;
     width: 100%;
     box-shadow: none;
   }
-  /* line 390, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 439, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__preview .app__preview__description {
     display: none;
   }
 }
-/* line 400, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 449, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__main {
   margin-top: 25px;
   padding: 25px;
   padding-top: 0px;
 }
-/* line 407, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 456, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__main .app__main__pop {
   border-radius: 3px;
   padding: 25px;
@@ -221,12 +227,12 @@ body {
   box-shadow: 2px 2px 10px #2c2c2c;
   overflow-y: auto;
 }
-/* line 428, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 477, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__footer {
   padding: 25px;
   padding-top: 0px;
 }
-/* line 433, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+/* line 482, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
 .app__footer .app__footer__pop {
   border-radius: 3px;
   padding: 25px;
@@ -237,7 +243,7 @@ body {
   box-shadow: 2px 2px 10px #2c2c2c;
 }
 @media only screen and (max-width: 725px) {
-  /* line 448, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
+  /* line 497, C:\Users\augus\Desktop\Programming\privy\privy\less\app.less */
   .app__footer .app__footer__pop {
     height: 85px;
   }
@@ -338,22 +344,23 @@ body {
 /* line 1, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read {
   padding-top: 40px !important;
+  height: auto !important;
   background-color: #0149e6 !important;
 }
-/* line 7, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+/* line 9, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read .read__type {
   display: block;
   font-size: 20px;
   font-weight: 900;
   text-transform: uppercase;
 }
-/* line 17, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+/* line 19, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read .read__title {
   display: block;
   font-size: 27px;
   font-weight: 300;
 }
-/* line 26, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
+/* line 28, C:\Users\augus\Desktop\Programming\privy\privy\less\read.less */
 .app__read a {
   color: white;
 }

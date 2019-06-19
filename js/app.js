@@ -170,11 +170,11 @@ async function load () {
 
 		issues = issues.sort((a, b) => parseInt(path(a.page).split("-")[1]) - parseInt(path(b.page).split("-")[1]));
 
-		for (const is of issues) {
+		// for (const is of issues) {
 				
-			document.querySelector(".app__menu__issues").appendChild(is.issue);
+		// 	document.querySelector(".app__menu__issues").appendChild(is.issue);
 
-		}
+		// }
 
 		// setTimeout(() => {
 
@@ -194,8 +194,8 @@ async function load () {
 	}
 
 	document.querySelector(".app").innerHTML = data;
-	document.querySelector(".app__menu").classList.remove("shown");
-	document.querySelector(".app").classList.remove("menu__shown");
+	// document.querySelector(".app__menu").classList.remove("shown");
+	// document.querySelector(".app").classList.remove("menu__shown");
 
 	scriptify(document.querySelector(".app"));
 
@@ -224,18 +224,18 @@ registerServiceWorker();
 
 window.addEventListener("hashchange", load);
 
-document.addEventListener("scroll", event => {
+// document.addEventListener("scroll", event => {
 	
-	var y = window.scrollY;
+// 	var y = window.scrollY;
 
-	if (y > 10) document.querySelector(".app__menu__brand").classList.add("minimized");
-	else document.querySelector(".app__menu__brand").classList.remove("minimized");
+// 	if (y > 10) document.querySelector(".app__menu__brand").classList.add("minimized");
+// 	else document.querySelector(".app__menu__brand").classList.remove("minimized");
 
-});
+// });
 
-document.querySelector(".app__menu__opener").addEventListener("click", () => {
+// document.querySelector(".app__menu__opener").addEventListener("click", () => {
 
-	document.querySelector(".app__menu").classList.toggle("shown");
-	document.querySelector(".app").classList.toggle("menu__shown");
+// 	document.querySelector(".app__menu").classList.toggle("shown");
+// 	document.querySelector(".app").classList.toggle("menu__shown");
 
-});
+// });
